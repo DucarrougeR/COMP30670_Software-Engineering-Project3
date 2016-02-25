@@ -12,17 +12,12 @@ __status__ = "Development"
 class Seater:
     x_axis = 4
     y_axis = 5
-    my_array = []*1000
+    my_array = []
     # this regular expression will give us the command and the rectangular bounding box
     # https://docs.python.org/2/library/re.html#re.MatchObject.group
     pat = re.compile("(.*) (\d+),(\d+) through (\d+),(\d+)")
     def __init__(self, size=1000):
-        # Loop over rows.
-        for row in self.my_array:
-            # Loop over columns.
-            for column in row:
-                print(column, end="")
-                print(end="\n")
+        self.my_array=[[0 for j in range(size)] for i in range(size)]
         return
     
     def get_cmd(self, line):
@@ -57,8 +52,8 @@ class Seater:
         return
     
     def number_occupied(self):
-        # ...
-        return
+        Number_Occupied = self.my_array[].count(1)
+        return Number_Occupied
     
 if __name__ == '__main__':
     pass

@@ -4,6 +4,12 @@ Created on 24 Feb 2016
 
 @author: Romain
 '''
+my_array = []
+def test_is_empty():
+    if 1 in src.seater.my_array:
+        return False
+    else:
+        return True
 
 def test_pattern():
     # test the pattern matching is parsing the line correctly
