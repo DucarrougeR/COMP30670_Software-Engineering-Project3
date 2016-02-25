@@ -17,6 +17,7 @@ class Seater:
     # this regular expression will give us the command and the rectangular bounding box
     # https://docs.python.org/2/library/re.html#re.MatchObject.group
     pat = re.compile("(.*) (\d+),(\d+) through (\d+),(\d+)")
+
     def __init__(self, size=1000):
         self.array=[[0 for j in range(size)] for i in range(size)]
         return

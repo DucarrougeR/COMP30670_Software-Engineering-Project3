@@ -5,7 +5,7 @@ from src.seater import Seater
 
 def main(filename=None):
     # here we create the seater object
-    seater = Seater(100)
+    seater = Seater(1000)
     
     # and we read the file line by line, feeding each line to the Seater
     with open(filename, 'r') as f:
