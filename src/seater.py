@@ -1,5 +1,6 @@
 import re
-from collections import Counter
+import numpy as np
+
 
 _author__ = "Romain Ducarrouge"
 __copyright__ = "Copyright (c) 2016"
@@ -11,16 +12,15 @@ __email__ = "romainducarrouge@gmail.com"
 __status__ = "Development"
 
 class Seater:
-    x_axis = 4
-    y_axis = 5
+    x, y = 0, 0
     array = []
     # this regular expression will give us the command and the rectangular bounding box
     # https://docs.python.org/2/library/re.html#re.MatchObject.group
     pat = re.compile("(.*) (\d+),(\d+) through (\d+),(\d+)")
 
     def __init__(self, size=1000):
-        self.array=[[0 for j in range(size)] for i in range(size)]
-        return
+        self.array=np.eye(2)
+        print (self.array)
     
     def get_cmd(self, line):
         cmd, x1, y1, x2, y2 = Seater.pat.match(line).groups()
