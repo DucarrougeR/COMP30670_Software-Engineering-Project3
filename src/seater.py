@@ -10,13 +10,17 @@ __email__ = "romainducarrouge@gmail.com"
 __status__ = "Development"
 
 class Seater:
-    
+    x_axis = 4
+    y_axis = 5
+    my_array = []
     # this regular expression will give us the command and the rectangular bounding box
     # https://docs.python.org/2/library/re.html#re.MatchObject.group
     pat = re.compile("(.*) (\d+),(\d+) through (\d+),(\d+)")
     def __init__(self, size=1000):
-        # need to do some initialisation of data structures here...
-        return
+        cols = 4
+        rows = 5
+        self.my_array = [[0 for i in range(self.x_axis)] for j in range(self.y_axis)]
+        return (self.my_array)
     
     def get_cmd(self, line):
         cmd, x1, y1, x2, y2 = Seater.pat.match(line).groups()
@@ -33,7 +37,7 @@ class Seater:
         elif cmd == 'empty':
             self.empty(x1, y1, x2, y2)
         else:
-            # YIKES!
+            # Invalid command input and pass
             pass
         return
     
