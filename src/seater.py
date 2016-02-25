@@ -12,7 +12,7 @@ __status__ = "Development"
 class Seater:
     x_axis = 4
     y_axis = 5
-    my_array = []
+    my_array = []*1000
     # this regular expression will give us the command and the rectangular bounding box
     # https://docs.python.org/2/library/re.html#re.MatchObject.group
     pat = re.compile("(.*) (\d+),(\d+) through (\d+),(\d+)")
