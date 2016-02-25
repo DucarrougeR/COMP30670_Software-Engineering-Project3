@@ -17,9 +17,10 @@ def test_pattern():
     res = seater.get_cmd("occupy 957,736 through 977,890")
     assert res == ('occupy', 957, 736, 977, 890)
 
-def test_all_seats_accounted_for()
+def test_all_seats_accounted_for():
     total = self.number_occupied + self.number_empty
     if total == len(array):
         print (True)
     else:
         print (False)
+
