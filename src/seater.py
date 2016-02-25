@@ -17,10 +17,13 @@ class Seater:
     # https://docs.python.org/2/library/re.html#re.MatchObject.group
     pat = re.compile("(.*) (\d+),(\d+) through (\d+),(\d+)")
     def __init__(self, size=1000):
-        cols = 4
-        rows = 5
-        self.my_array = [[0 for i in range(self.x_axis)] for j in range(self.y_axis)]
-        return (self.my_array)
+        # Loop over rows.
+        for row in self.my_array:
+            # Loop over columns.
+            for column in row:
+                print(column, end="")
+                print(end="\n")
+        return
     
     def get_cmd(self, line):
         cmd, x1, y1, x2, y2 = Seater.pat.match(line).groups()

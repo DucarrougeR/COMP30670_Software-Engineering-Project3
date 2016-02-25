@@ -1,8 +1,8 @@
 from src.seater import Seater
 '''
-Created on 22 Feb 2016
+Created on 24 Feb 2016
 
-@author: aonghus
+@author: Romain
 '''
 
 def test_pattern():
