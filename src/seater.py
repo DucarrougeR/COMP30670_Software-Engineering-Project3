@@ -9,8 +9,6 @@ __maintainer__ = "Romain Ducarrouge"
 __email__ = "romainducarrouge@gmail.com"
 __status__ = "Development"
 
-# its a good idea to make a class to hold the various bits of data 
-# and functions we need to solve this problem
 class Seater:
     
     # this regular expression will give us the command and the rectangular bounding box
