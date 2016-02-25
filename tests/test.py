@@ -4,7 +4,7 @@ Created on 24 Feb 2016
 
 @author: Romain
 '''
-my_array = []
+array = []
 def test_is_empty():
     if 1 in src.seater.my_array:
         return False
@@ -17,3 +17,9 @@ def test_pattern():
     res = seater.get_cmd("occupy 957,736 through 977,890")
     assert res == ('occupy', 957, 736, 977, 890)
 
+def test_all_seats_accounted_for()
+    total = self.number_occupied + self.number_empty
+    if total == len(array):
+        print (True)
+    else:
+        print (False)

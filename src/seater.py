@@ -1,4 +1,5 @@
 import re
+from collections import Counter
 
 _author__ = "Romain Ducarrouge"
 __copyright__ = "Copyright (c) 2016"
@@ -12,12 +13,12 @@ __status__ = "Development"
 class Seater:
     x_axis = 4
     y_axis = 5
-    my_array = []
+    array = []
     # this regular expression will give us the command and the rectangular bounding box
     # https://docs.python.org/2/library/re.html#re.MatchObject.group
     pat = re.compile("(.*) (\d+),(\d+) through (\d+),(\d+)")
     def __init__(self, size=1000):
-        self.my_array=[[0 for j in range(size)] for i in range(size)]
+        self.array=[[0 for j in range(size)] for i in range(size)]
         return
     
     def get_cmd(self, line):
@@ -52,8 +53,16 @@ class Seater:
         return
     
     def number_occupied(self):
-        Number_Occupied = self.my_array[].count(1)
-        return Number_Occupied
+        number_occupied = self.array.count(1)
+        return number_occupied
+
+    def number_empty(self):
+        number_empty = self.array.count(0)
+        return number_empty
+
+    def total_seats(self):
+        total = self.number_occupied + self.number_empty
+        return total
     
 if __name__ == '__main__':
     pass
