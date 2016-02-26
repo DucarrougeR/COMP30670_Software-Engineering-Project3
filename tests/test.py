@@ -22,7 +22,7 @@ def test_all_seats_accounted_for():
 
 
 def test_is_empty():
-    if 1 in seater.my_array:
+    if 1 in seater.array:
         return False
     else:
         return True

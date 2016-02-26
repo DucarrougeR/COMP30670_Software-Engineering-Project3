@@ -42,15 +42,24 @@ class Seater:
         return
     
     def occupy(self, x1, y1, x2, y2):
-        #...
+        #generate a sub-array with same dimension
+            #use: np.ones(input size)
+            #Set all values from [x1,y1] to [x2:y2] to 1
+        #Perform a Logical OR operation   (if original cell is 0, becomes 1)(if original cell is 1, remains 1)
         return
     
     def empty(self, x1, y1, x2, y2):
-        #...
-        return 
+        #select the sub-array in original array
+        #Perform a Logical NOT operation on sub-array (if original cell is 0 |--> 1)(if original cell is 1 |--> 0)
+        return
     
-    def toggle(self, x1, y1, x2, y2):
-        # ...
+    def toggle(self, x1, y1, x2, y2): #toggle = switch state
+        #generate a sub-array with same dimension
+            #use np.ones(input size)
+            #Set all values from [x1,y1] to [x2:y2] to 1
+        #Perform a Logical XOR operation on array
+        #(if original cell is Empty: 0 XOR 1 = 1)
+        #(if original cell is Occupied: 1 XOR 1 = 0)
         return
     
     def number_occupied(self):
