@@ -64,10 +64,8 @@ class Seater:
     
     def number_occupied(self):
         number_occupied = self.array.count(1)
-            #print (np.count_nonzero(d))
-                    # counts all non-zeros elem in array
-            #print (np.sum(d))
-                    # adds all elem in array (1 occupied seat = 1)
+            #print (np.count_nonzero(d)) counts all non-zeros elem in array
+            #print (np.sum(d)) adds all elem in array (1 occupied seat = 1)
         return number_occupied
 
     def number_empty(self):
