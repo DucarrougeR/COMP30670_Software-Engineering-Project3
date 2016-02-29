@@ -11,7 +11,8 @@ def main(filename=None):
     with open(filename, 'r') as f:
         for line in f:
             seater.seat(line.strip())
-            
+
+    print(seater.array)
     print ('number of occupied seats', seater.number_occupied())
     return
 

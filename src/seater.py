@@ -1,7 +1,6 @@
 import re
 import numpy as np
 
-
 _author__ = "Romain Ducarrouge"
 __copyright__ = "Copyright (c) 2016"
 __credits__ = ["Romain Ducarrouge"]
@@ -15,11 +14,10 @@ class Seater:
     x, y = 0, 0
     array = []
     # this regular expression will give us the command and the rectangular bounding box
-    # https://docs.python.org/2/library/re.html#re.MatchObject.group
     pat = re.compile("(.*) (\d+),(\d+) through (\d+),(\d+)")
 
     def __init__(self, size=1000):
-        self.array=np.zeros((size, size), dtype=np.int)
+        self.array=np.zeros((size, size), dtype=np.bool)
         print (self.array)
     
     def get_cmd(self, line):
@@ -43,12 +41,12 @@ class Seater:
     
     def occupy(self, x1, y1, x2, y2):
         for i in self.array[x1:y1, x2:y2]:
-            i = 1
+            i = True
         return
     
     def empty(self, x1, y1, x2, y2):
         for i in self.array[x1:y1, x2:y2]:
-            i = 0
+            i = False
         return
     
     def toggle(self, x1, y1, x2, y2): #toggle = switch state
@@ -58,8 +56,8 @@ class Seater:
     
     def number_occupied(self):
         number_occupied = (np.count_nonzero(self.array))
-        print (np.sum(self.array))            #adds all elem in array (1 occupied seat = 1)
-        print (number_occupied)
+        #print (np.sum(self.array))    #adds all elem in array (1 occupied seat = 1)
+        return (number_occupied)
 
     def number_empty(self):
         number_empty = ((1000*1000) - np.count_nonzero(self.array))

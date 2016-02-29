@@ -1,10 +1,10 @@
+
 from src.seater import Seater
 '''
 Created on 24 Feb 2016
 @author: Romain
 '''
-
-array = src.seater.array
+#array = src.seater.array
 
 def test_pattern():
     # test the pattern matching is parsing the line correctly
@@ -13,21 +13,13 @@ def test_pattern():
     assert res == ('occupy', 957, 736, 977, 890)
 
 def test_all_seats_accounted_for():
+    seater = Seater()
     total = seater.number_occupied + seater.number_empty
-    if total == len(array):
-        print (True)
-    else:
-        print (False)
-
+    assert total == len(seater.array)+1
 
 def test_all_empty():
-    if 1 in array:
-        return False
-    else:
-        return True
+    seater = Seater()
+    assert 1 in seater.array
 
 def test_all_full():
-    if 0 in array:
-        return False
-    else:
-        return True
+    assert 0 in seater.array
