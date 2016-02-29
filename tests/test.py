@@ -13,7 +13,7 @@ def test_pattern():
     assert res == ('occupy', 957, 736, 977, 890)
 
 def test_all_seats_accounted_for():
-    total = self.number_occupied + self.number_empty
+    total = seater.number_occupied + seater.number_empty
     if total == len(array):
         print (True)
     else:

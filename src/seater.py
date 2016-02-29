@@ -19,7 +19,7 @@ class Seater:
     pat = re.compile("(.*) (\d+),(\d+) through (\d+),(\d+)")
 
     def __init__(self, size=1000):
-        self.array=np.eye(2)
+        self.array=np.zeros((size, size), dtype=np.int)
         print (self.array)
     
     def get_cmd(self, line):
@@ -49,25 +49,20 @@ class Seater:
     def empty(self, x1, y1, x2, y2):
         for i in self.array[x1:y1, x2:y2]:
             i = 0
-        #select the sub-array in original array
-        #Perform a Logical NOT operation on sub-array (if original cell is 0 |--> 1)(if original cell is 1 |--> 0)
         return
     
     def toggle(self, x1, y1, x2, y2): #toggle = switch state
-        for i in self.array[x1:y1, x2,y2]:
+        for i in self.array[x1:y1, x2:y2]:
             i = np.logical_not(i)
-        #Define the sub-section of the array to slice to switch state
-        #use the logical_not function
         return
     
     def number_occupied(self):
-        number_occupied = self.array.count(1)
-        print (np.count_nonzero(self.array))  #counts all non-zeros elem in array
+        number_occupied = (np.count_nonzero(self.array))
         print (np.sum(self.array))            #adds all elem in array (1 occupied seat = 1)
         print (number_occupied)
 
     def number_empty(self):
-        number_empty = self.array.count(0)
+        number_empty = ((1000*1000) - np.count_nonzero(self.array))
         return number_empty
 
     def total_seats(self):
