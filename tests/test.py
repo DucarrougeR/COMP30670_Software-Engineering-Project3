@@ -17,9 +17,9 @@ def test_all_seats_accounted_for():
     total = seater.number_occupied + seater.number_empty
     assert total == len(seater.array)+1
 
-def test_all_empty():
+def test_all_empty():         #Check if there are any 1 (occupied) in array
     seater = Seater()
     assert 1 in seater.array
 
-def test_all_full():
+def test_all_full():          #Check if there are any 0 (empty) in array
     assert 0 in seater.array
