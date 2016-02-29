@@ -1,4 +1,3 @@
-
 from src.seater import Seater
 '''
 Created on 24 Feb 2016

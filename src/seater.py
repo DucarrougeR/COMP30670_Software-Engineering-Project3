@@ -40,18 +40,15 @@ class Seater:
         return
     
     def occupy(self, x1, y1, x2, y2):
-        for i in self.array[x1:y1, x2:y2]:
-            i = True
+        self.array[x1:x2+1, y1:y2+1] = True
         return
     
     def empty(self, x1, y1, x2, y2):
-        for i in self.array[x1:y1, x2:y2]:
-            i = False
+        self.array[x1:x2+1, y1:y2+1] = False
         return
     
     def toggle(self, x1, y1, x2, y2): #toggle = switch state
-        for i in self.array[x1:y1, x2:y2]:
-            i = np.logical_not(i)
+        self.array[x1:x2+1, y1:y2+1] = np.logical_not(self.array[x1:x2+1, y1:y2+1])
         return
     
     def number_occupied(self):
