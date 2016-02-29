@@ -1,4 +1,5 @@
 from src.seater import Seater
+import nose
 '''
 Created on 24 Feb 2016
 @author: Romain
