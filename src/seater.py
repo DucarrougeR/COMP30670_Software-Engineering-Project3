@@ -42,31 +42,29 @@ class Seater:
         return
     
     def occupy(self, x1, y1, x2, y2):
-        #generate a sub-array with same dimension
-            #use: np.ones(input size)
-            #Set all values from [x1,y1] to [x2:y2] to 1
-        #Perform a Logical OR operation   (if original cell is 0, becomes 1)(if original cell is 1, remains 1)
+        for i in self.array[x1:y1, x2:y2]:
+            i = 1
         return
     
     def empty(self, x1, y1, x2, y2):
+        for i in self.array[x1:y1, x2:y2]:
+            i = 0
         #select the sub-array in original array
         #Perform a Logical NOT operation on sub-array (if original cell is 0 |--> 1)(if original cell is 1 |--> 0)
         return
     
     def toggle(self, x1, y1, x2, y2): #toggle = switch state
-        #generate a sub-array with same dimension
-            #use np.ones(input size)
-            #Set all values from [x1,y1] to [x2:y2] to 1
-        #Perform a Logical XOR operation on array
-        #(if original cell is Empty: 0 XOR 1 = 1)
-        #(if original cell is Occupied: 1 XOR 1 = 0)
+        for i in self.array[x1:y1, x2,y2]:
+            i = np.logical_not(i)
+        #Define the sub-section of the array to slice to switch state
+        #use the logical_not function
         return
     
     def number_occupied(self):
         number_occupied = self.array.count(1)
-            #print (np.count_nonzero(d)) counts all non-zeros elem in array
-            #print (np.sum(d)) adds all elem in array (1 occupied seat = 1)
-        return number_occupied
+        print (np.count_nonzero(self.array))  #counts all non-zeros elem in array
+        print (np.sum(self.array))            #adds all elem in array (1 occupied seat = 1)
+        print (number_occupied)
 
     def number_empty(self):
         number_empty = self.array.count(0)
@@ -78,3 +76,4 @@ class Seater:
     
 if __name__ == '__main__':
     pass
+

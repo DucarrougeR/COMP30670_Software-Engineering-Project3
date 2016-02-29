@@ -1,7 +1,6 @@
 from src.seater import Seater
 '''
 Created on 24 Feb 2016
-
 @author: Romain
 '''
 
@@ -21,8 +20,14 @@ def test_all_seats_accounted_for():
         print (False)
 
 
-def test_is_empty():
-    if 1 in seater.array:
+def test_all_empty():
+    if 1 in array:
+        return False
+    else:
+        return True
+
+def test_all_full():
+    if 0 in array:
         return False
     else:
         return True
