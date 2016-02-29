@@ -12,6 +12,11 @@ def test_pattern():
     res = seater.get_cmd("occupy 957,736 through 977,890")
     assert res == ('occupy', 957, 736, 977, 890)
 
+def test_occupy4():
+    seater = Seater()
+    res = seater.get_cmd("occupy 950,950 through 952,952")
+    assert seater.number_occupied() == 9
+
 def test_all_seats_accounted_for():
     seater = Seater()
     total = seater.number_occupied + seater.number_empty
